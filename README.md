@@ -8,8 +8,8 @@ Contents
 --------
 - `datasets/` - contains `train.csv` and `test.csv` used by the notebooks.
 - `scripts/` - the main Jupyter notebooks used for EDA, preprocessing, model building, experiments, and submission generation. Important notebooks:
-  - `Copy_of_air_quality_forecasting_starter_code.ipynb`  primary end-to-end notebook: EDA  preprocessing  generator creation  LSTM model build  experiments runner  produce per-experiment predictions and results CSVs.
-  - `anals.ipynb`  additional exploratory/experiment notebook.
+  - `Analysis_training_code.ipynb`  primary end-to-end notebook: EDA  preprocessing  generator creation  LSTM model build  experiments runner  produce per-experiment predictions and results CSVs.
+  -
 - `output_submissions/` - where experiment predictions, per-experiment plots, and `experiments_results.csv` (aggregated RMSEs) are written when you run the experiments loop.
 - `env/` - a local Python virtual environment (optional; included for convenience).
 - `requiremenst.txt` - a text file listing Python packages (note: filename contains a typo in this repo; see Installation).
@@ -65,7 +65,7 @@ jupyter notebook
 
 Notes about running experiments
 ------------------------------
-- Experiments can be long-running. The provided experiment grid in `Copy_of_air_quality_forecasting_starter_code.ipynb` contains 15 configurations with varying batch sizes, learning rates, layer counts, and epochs. Reduce `epochs` or the grid if you want a quick smoke test.
+- Experiments can be long-running. The provided experiment grid in `Analysis_training.ipynb` contains 15 configurations with varying batch sizes, learning rates, layer counts, and epochs. Reduce `epochs` or the grid if you want a quick smoke test.
 - The notebooks are written so model weights are not saved by default; instead, predictions (inverse-transformed to original pm2.5 scale) are saved per-experiment under `output_submissions/`.
 - If you want to persist a model checkpoint, you can add a `ModelCheckpoint` callback in the `train_and_evaluate` function.
 
@@ -89,16 +89,4 @@ Recommended next steps
 - Add an experiments-summary cell to visualize `experiments_results.csv` (RMSE vs hyperparameters) and pick the best configuration for a longer run.
 - Consider adding model checkpointing and saving the best model per-experiment if you want reproducible model files.
 
-Contact / Notes
-----------------
-This repository appears to be a personal/educational project. If you want, I can:
-
-- Add an experiments-summary cell that loads `output_submissions/experiments_results.csv` and visualizes RMSE trends.
-- Add a short script to convert per-experiment predictions into competition submission format automatically.
-
-If you'd like one of the above, say which and I will add it to the notebook.
-
-License
--------
-This project does not include an explicit license file. If you intend to publish or share, consider adding an appropriate license 
-
+Thank you 
